@@ -79,7 +79,7 @@ public:
 
 
 uint64_t nLastBlockTx = 0;
-uint64_t nLastBlockSize = 0;
+uint64_t nLastBlockSize = 50000;
 int64_t nLastCoinStakeSearchInterval = 0;
  
 // We want to sort transactions by priority and fee, so:
@@ -253,7 +253,7 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake, int64_t* pFees)
 
         // Collect transactions into block
         map<uint256, CTxIndex> mapTestPool;
-        uint64_t nBlockSize = 1000;
+        uint64_t nBlockSize = 45000;
         uint64_t nBlockTx = 0;
         int nBlockSigOps = 100;
         bool fSortedByFee = (nBlockPrioritySize <= 0);
